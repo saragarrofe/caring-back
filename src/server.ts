@@ -1,6 +1,8 @@
 
-import 'reflect-metadata';
-import * as dotenv from 'dotenv';
+// inicia el servidor y establecer la conexión a la base de datos
+
+import 'reflect-metadata'; // es necesario para TypeORM
+import * as dotenv from 'dotenv'; // carga las variables de entorno
 import { AppDataSource } from './orm/config/data-source';
 import app from './app';
 
