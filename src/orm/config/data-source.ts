@@ -3,7 +3,7 @@ import { Plant } from "../entities/Plant";
 import { User } from "../entities/User";
 
 export const AppDataSource = new DataSource({
-    type: 'mysql',                
+  type: 'mysql',                
   host: process.env.DB_HOST || 'localhost',   
   port: Number(process.env.DB_PORT) || 1234,   
   username: process.env.DB_USER || 'root',    
