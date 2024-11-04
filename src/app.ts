@@ -2,6 +2,7 @@
 // ### Se encarga de configurar la aplicación y no de ejecutarla
 
 // módulos para la api 
+import 'reflect-metadata'; // es necesario para TypeORM
 import express from 'express'; // manejar rutas y peticiones
 import authRoutes from './routes/auth.routes';
 import userRoutes from './routes/user.routes';
@@ -27,9 +28,5 @@ app.use(cors({
   }));
 
 
-// prueba
-app.get('/get', (req, res) => {
-    res.send('Primer mensaje: Get bien gestionado!')
-});
 
 export default app;
