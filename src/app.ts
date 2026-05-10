@@ -1,5 +1,6 @@
 
 // ### Se encarga de configurar la aplicación y no de ejecutarla
+// Configura middleware, distribuye rutas
 
 // módulos para la api 
 import 'reflect-metadata'; // es necesario para TypeORM
@@ -8,7 +9,6 @@ import authRoutes from './routes/auth.routes';
 import userRoutes from './routes/user.routes';
 import cors from 'cors'; // permitir peticiones entre dominios
 
-// instancia
 const app = express();
 
 app.disable('x-powered-by')
