@@ -34,6 +34,10 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
     try {
         // desestructuración 
         const { email, password } = req.body; 
+
+        if (!email || !password) {                                                                                                                                   
+            return res.status(400).json({ message: 'Email and password required' });
+        }
     
         // verificar si el usuario ya existe
         const existingUser = await AppDataSource.getRepository(User).findOneBy({email});

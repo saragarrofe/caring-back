@@ -2,11 +2,10 @@
 // inicia el servidor y establecer la conexión a la base de datos
 
 import 'reflect-metadata'; // es necesario para TypeORM
-import * as dotenv from 'dotenv';
+import 'dotenv/config'
 import { AppDataSource } from './orm/config/data-source';
 import app from './app';
 
-dotenv.config({ override: true });
 
 // dotenv.config();
 const PORT = Number(process.env.PORT) || 1234;

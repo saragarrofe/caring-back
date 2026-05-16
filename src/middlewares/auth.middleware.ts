@@ -18,9 +18,9 @@ export const verifyToken = async (req: Request, res: Response, next: NextFunctio
             return res.status(401).json({ message: 'No token' });
         }
 
-        const decoded = jwt.verify(token, SECRET_KEY);
+        const decoded = jwt.verify(token, SECRET_KEY) as JwtPayload;
 
-        req.user = decoded ;
+        req.user = decoded;
         next();
     } catch (error) {
         res.status(401).json({ message: 'Invalid token' });
