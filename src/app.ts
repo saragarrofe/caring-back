@@ -1,4 +1,3 @@
-
 // ### Se encarga de configurar la aplicación y no de ejecutarla
 // Configura middleware, distribuye rutas
 
@@ -14,14 +13,15 @@ const app = express();
 app.disable('x-powered-by')
 app.use(express.json()); // permite que express maneje peticiones con JSON en el cuerpo
 
-app.use('/login', authRoutes); 
+// configuración del cors para permitir peticiones desde un origen específico
+app.use(cors({
+    origin: 'http://localhost:5173',
+  }));
+
+app.use('/auth', authRoutes); 
 app.use('/user', userRoutes); 
 
 
-// configuración del cors para permitir peticiones desde un origen específico
-app.use(cors({
-    origin: 'http://localhost:3306',
-  }));
 
 
 
