@@ -6,6 +6,7 @@ import 'reflect-metadata'; // es necesario para TypeORM
 import express from 'express'; // manejar rutas y peticiones
 import authRoutes from './routes/auth.routes';
 import userRoutes from './routes/user.routes';
+import plantRoutes from './routes/plant.routes';
 import cors from 'cors'; // permitir peticiones entre dominios
 
 const app = express();
@@ -20,6 +21,7 @@ app.use(cors({
 
 app.use('/auth', authRoutes); 
 app.use('/user', userRoutes); 
+app.use('/plant', plantRoutes); 
 
 
 

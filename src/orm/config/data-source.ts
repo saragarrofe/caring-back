@@ -1,6 +1,7 @@
 import { DataSource } from "typeorm";
 import { Plant } from "../entities/Plant";
 import { User } from "../entities/User";
+import { WateringEntry } from "../entities/WateringEntry";
 
 export const AppDataSource = new DataSource({
   type: 'mysql',                
@@ -11,7 +12,7 @@ export const AppDataSource = new DataSource({
   database: process.env.DB_NAME,      
   synchronize: process.env.NODE_ENVIRONMENT === "development",    //  sincronizar las entidades con la base de datos en DESARROLLO SOLO 
   logging: true,        // activar el logging para ver las consultas que ejecuta TypeORM
-  entities: [Plant, User],   
+  entities: [Plant, User, WateringEntry],   
   migrations: ['src/orm/migration/*.ts'],  
   subscribers: [],
 
