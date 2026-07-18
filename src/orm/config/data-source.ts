@@ -10,7 +10,7 @@ export const AppDataSource = new DataSource({
   username: process.env.DB_USER,    
   password: process.env.DB_PASSWORD,   
   database: process.env.DB_NAME,      
-  synchronize: process.env.NODE_ENVIRONMENT === "development",    //  sincronizar las entidades con la base de datos en DESARROLLO SOLO 
+  synchronize: process.env.NODE_ENVIRONMENT === "development",   //  sincronizar las entidades con la base de datos en DESARROLLO SOLO 
   logging: true,        // activar el logging para ver las consultas que ejecuta TypeORM
   entities: [Plant, User, WateringEntry],   
   migrations: ['src/orm/migration/*.ts'],  

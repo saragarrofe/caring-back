@@ -23,8 +23,8 @@ export class Plant {
     @Column()
     species!: string;
 
-    @Column()
-    imageUrl!: string;
+    @Column({ nullable: true })
+    imageUrl?: string;
 
     @Column()
     lastWatered!: string;
